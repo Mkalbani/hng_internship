@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
-from datetime import datetime
-import pytz
+import datetime
+import os
 
 app = Flask(__name__)
 
@@ -9,8 +9,8 @@ def data_info():
     slack_name = str("Musa Muhammad Khalid")
     track = str('backend')
     
-    current_day = datetime.now(pytz.utc).strftime('%A')
-    utc_time = datetime.now(pytz.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    current_day = datetime.datetime.now().strftime('%A')
+    utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     res = {
         "slack_name": slack_name,
