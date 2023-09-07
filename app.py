@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def data_info():
-    slack_name = 'Musa Muhammad Khalid'
-    track = 'backend'
+    slack_name = request.args.get('Musa Muhammad Khalid')
+    track = request.args.get('backend')
     
     current_day = datetime.now(pytz.utc).strftime('%A')
     utc_time = datetime.now(pytz.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
