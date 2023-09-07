@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def data_info():
     slack_name = str("Musa Muhammad Khalid")
     track = str('backend')
